@@ -1,0 +1,61 @@
+@import "../../styles/colors.scss";
+
+.character-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.character-list {
+  background-color: $dark-grey;
+  color: $white;
+}
+
+.character-list-header {
+  margin: 0;
+  padding: 0.15rem;
+  text-align: center;
+  h4 {
+    margin: 0.5rem;
+  }
+  p {
+    color: $light-grey;
+  }
+}
+
+.character-list-results {
+  display: flex;
+  -moz-box-pack: center;
+  justify-content: center;
+  -moz-box-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1920px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.buttons-container {
+  display: flex;
+}
+
+.page-button {
+  background-color: $orange;
+  width: 12rem;
+  border: none;
+  margin: 10px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: $white;
+  cursor: pointer;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  box-shadow: $white 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+  &:hover {
+    box-shadow: none;
+  }
+}

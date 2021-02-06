@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+![Screenshot 2022-04-08 at 1 07 38 AM](https://user-images.githubusercontent.com/18538027/162333724-5c0cd2f2-50aa-47c0-99bb-7d5d9cd392d2.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Rick and Morty App
 
-## Available Scripts
+This application makes use of the public API of Rick & Morty: https://rickandmortyapi.com.
 
-In the project directory, you can run:
+- Front end is built in React with Redux and Hooks.
+- Back end is built in Express and is a REST API with MongoDB Database.
+- MongoDB url is provided separately.
 
-### `yarn start`
+## Objectives
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### The main functionalities are:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Login\
+The users need to be authenticated to consume the application. The auth is kept state between reloads in local storage. User information for login is stored in db.
+- List view\
+Main page is a list view of all characters with an indicator to know if a character is in the fav list.
+- Detail view\
+When character is clicked, the user will be taken to a detailed view page. A button is available to add or remove a character from a favourite list. Favourites information is stored in db.
+- 404 page
 
-### `yarn test`
+### These bonus functionalities are:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Register\
+Sign up page was added within Auth component for new users.
+- Testing\
+Basic Front End tests added in Jest. See further work.
+- Backend pagination\
+Next/prev button added to send request to back end to fetch next page of characters.
+- Image preloader\
+Further work.
 
-### `yarn build`
+### Further work to be done with more time:
+- Testing! Write unit, integration and e2e tests to check components, functionality for user flow `(Auth -> View Character List -> View Details -> Favourite/Unfavourite)`\
+e.g Jest and Puppeteer for unit, api and e2e testing across browsers and platforms, and 
+- Deploy app
+- Episode details to populate `First seen in:` name.
+- Add informative errors to be displayed in front end
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Running the app locally
+- Run `git clone https://github.com/cmcmanus2022/rick-morty-app.git`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Back end
+- Create `.env` file in `server` directory with `secret` and `CONNECTION_URL` variables. These are provided separately.
+- Open terminal and navigate to `server`.
+- Run `yarn start` to run app in development mode.
+- You should see a message in console log saying `Server running on port: 5000` if successful.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Front end
+- Open new terminal and navigate to `src` directory, run `yarn start` to run app in development mode.
+- Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `yarn eject`
+## Extra libraries
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Back end
+- axios - to make http requests
+- bcryptjs - to hash password
+- jsonwebtoken - for authentication
+- mongoose - MongoDB client
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Front end
+- react-router-dom - React navigation
+- redux-thunk - React redux for async anctions

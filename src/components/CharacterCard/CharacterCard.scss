@@ -1,0 +1,101 @@
+@import "../../styles/colors.scss";
+
+.link {
+  color: $light-grey;
+  text-decoration: none;
+  .character-card {
+    width: 45vw;
+    min-height: 220px;
+    height: 20vh;
+    display: flex;
+    overflow: break-word;
+    text-align: left;
+    background: $medium-grey none repeat scroll 0% 0%;
+    border-radius: 1rem;
+    margin: 1rem;
+    box-shadow: $white 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+    &:hover {
+      box-shadow: none;
+    }
+    
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      height: initial;
+      width: 100%;
+    }
+
+    .image-wrapper {
+      flex: 2 1 0%;
+      width: 100%;
+    }
+
+    .image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      opacity: 1;
+      border-top-left-radius: 1rem;
+      border-bottom-left-radius: 1rem;
+      transition: opacity 0.5s ease 0s;
+      object-position: center center;
+      object-fit: cover;
+      
+      @media screen and (max-width: 768px) {
+        height: 200px;
+        border-top-right-radius: 1rem;
+        border-bottom-left-radius: none;
+      }
+    }
+
+    .character-card-details {
+      list-style-type: none;
+      flex: 3 3 0%;
+      padding-left: 1rem;
+      padding-bottom: 0.5rem;
+      margin-bottom: 0;
+      color: $white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      li {
+        padding-bottom: 0.5rem;
+      }
+
+      .name {
+        font-weight: bold;
+        font-size: 2rem;
+        padding-bottom: 0;
+      }
+      .status-species,
+      .location-name {
+        font-size: 1.5rem;
+        padding-bottom: 1rem;
+      }
+      .location,
+      .episode {
+        color: $light-grey;
+        font-size: 1.75rem;
+        padding-bottom: 0.25rem;
+      }
+      .episode-name {
+        font-size: 1.4rem;
+      }
+    }
+
+    .favourite-icon {
+      position: relative;
+      align-self: flex-start;
+      margin: 5px 10px 5px 0;
+      width: 50px;
+      font-size: 1.5em;
+      text-align: center;
+
+      @media screen and (max-width: 768px) {
+        margin: 0;
+      }
+    }
+  }
+}
