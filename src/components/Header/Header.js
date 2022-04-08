@@ -1,6 +1,6 @@
 import React from "react";
 import headerImage from "../../images/header.png";
-import {Link, Navigate, useNavigate, useLocation, matchPath} from "react-router-dom";
+import {Link, useLocation, matchPath} from "react-router-dom";
 import {logout} from "../../actions/auth";
 import {useDispatch} from "react-redux";
 import "./Header.scss";
@@ -8,7 +8,6 @@ import "./Header.scss";
 const Header = (props) => {
   const {isAuth} = props;
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const {pathname} = useLocation();
 
   const logoutHandler = () => {
